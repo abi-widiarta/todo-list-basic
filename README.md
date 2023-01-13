@@ -13,6 +13,9 @@
   3. somehow my prettier extentions on vsc doesn't work like i wanted to, especially the word wrap when doing async
      that's why some of the line in my code maybe doesn't have semicolon at the end of it cuz i used to rely on prettier on doing that
      = no solution yet to be found, soon i hope
+     
+
+Tips : Be careful when writing script in package.json to convert tailwind input.css to output.css
  
 # I think that's all for now
      
