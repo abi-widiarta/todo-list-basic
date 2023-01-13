@@ -15,7 +15,7 @@
      = no solution yet to be found, soon i hope
      
 
-Tips : Be careful when writimg script in package.json to convert tailwind input.css to output.css
+Tips : Be careful when writing script in package.json to convert tailwind input.css to output.css
  
 # I think that's all for now
      
