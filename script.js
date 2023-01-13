@@ -22,7 +22,6 @@ inputBtn.addEventListener("click", (e) => {
     })  
     .then(
       (response) => {
-            e.target.innerHTML = "Add";
             response.json()
             fetch("https://629a2b907b866a90ec4afcf3.mockapi.io/todoAPI")
             .then((response) => response.json())
@@ -31,6 +30,7 @@ inputBtn.addEventListener("click", (e) => {
               arrTodo = hasil;
               append(arrTodo);
               inputField.value = "";
+              e.target.innerHTML = "Add";
               }
             )
       }
