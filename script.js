@@ -4,7 +4,8 @@ const inputField = document.querySelector("#title");
 const deleteBtn = document.querySelectorAll("#delete-btn");
 let arrTodo = [];
 
-inputBtn.addEventListener("click", () => {
+inputBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   const titleValue = document.querySelector("#title").value;
 
     if(titleValue != "") {
