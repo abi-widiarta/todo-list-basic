@@ -7,9 +7,10 @@ let arrTodo = [];
 inputBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const titleValue = document.querySelector("#title").value;
-
-    if(titleValue != "") {
-      fetch("https://629a2b907b866a90ec4afcf3.mockapi.io/todoAPI",{
+  
+  if(titleValue != "") {
+    e.target.innerHTML = `<img class="h-5" src="./assets/loader-white.svg" />`;
+    fetch("https://629a2b907b866a90ec4afcf3.mockapi.io/todoAPI",{
       method:'post',
       headers: {
         'Content-Type' : 'application/json'
@@ -21,11 +22,12 @@ inputBtn.addEventListener("click", (e) => {
     })  
     .then(
       (response) => {
+            e.target.innerHTML = "Add";
             response.json()
             fetch("https://629a2b907b866a90ec4afcf3.mockapi.io/todoAPI")
             .then((response) => response.json())
             .then((hasil) => {
-              console.log("get :",hasil);
+              // console.log("get :",hasil);
               arrTodo = hasil;
               append(arrTodo);
               inputField.value = "";
@@ -34,48 +36,10 @@ inputBtn.addEventListener("click", (e) => {
       }
       )
     }
-    console.log("tes1")    
 })
 
-// inputBtn.addEventListener("click", () => {
-//   const titleValue = document.querySelector("#title").value;
-
-//     if(titleValue != "") {
-//       fetch("https://629a2b907b866a90ec4afcf3.mockapi.io/todoAPI",{
-//       method:'post',
-//       headers: {
-//         'Content-Type' : 'application/json'
-//       },
-//       body:JSON.stringify({
-//         tittle: `${titleValue}`,
-//         status: false
-//       })
-//     })  
-//     .then((response) => response.json())
-//     .then((hasil) => console.log("post : ",hasil))
-//     .then(
-//       fetch("https://629a2b907b866a90ec4afcf3.mockapi.io/todoAPI")
-//       .then((response) => response.json())
-//       .then((hasil) => {
-//         console.log("get :",hasil);
-//         arrTodo = hasil;
-//         append(arrTodo);
-//         }
-//       )
-//     )
-//     }
-//     console.log("tes1")    
-// })
-
-// const node = document.createElement("li");
-// node.innerHTML = `<li class="flex px-8 py-4 border-2 border-teal-300 rounded-lg">
-// <h1>${hasil[0].tittle}</h1>
-// <button type="submit" class="ml-1">✅</button>
-// </li>`
-// todoItem.appendChild(node)
-
 function deleteTodo(el){
-  console.log(el.id)
+    el.childNodes[3].innerHTML = `<img class="h-5" src="./assets/loader2.svg" />`;
     fetch(`https://629a2b907b866a90ec4afcf3.mockapi.io/todoAPI/${el.id}`, {
     method: 'DELETE',
   })
@@ -84,7 +48,7 @@ function deleteTodo(el){
     fetch("https://629a2b907b866a90ec4afcf3.mockapi.io/todoAPI")
       .then((response) => response.json())
       .then((hasil) => {
-        console.log("get :",hasil);
+        // console.log("get :",hasil);
       
       arrTodo = hasil;
       append(arrTodo);
