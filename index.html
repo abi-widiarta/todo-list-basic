@@ -6,25 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   </head>
   <body>
-    <div class="py-10 flex flex-col justify-center items-center">
-      <div class="form-container">
-        <h1 class="font-semibold text-4xl mb-6 w-full text-center">TO DO LIST</h1>
+    <div class="border-slate-700 py-10 flex flex-col justify-center items-center">
+      <div class="form-container md:w-96 w-72">
+        <h1 class="font-semibold text-4xl mb-10 w-full text-center">TO DO LIST</h1>
         <form action="#" class="mb-4">
-          <label for="title">Title</label> <br>
-          <input id="title" class="p-2 rounded-md outline-teal-400 border-teal-400 border-2"  type="text"> <br>
+          <label for="title" class="font-bold">Title</label> <br>
+          <input id="title" maxlength="50" class="p-2 w-full rounded-md outline-teal-400 border-teal-400 border-2"  type="text"> <br>
           <button id="input-btn" type="submit" class="flex items-center justify-center mt-4 w-full bg-teal-400 h-10 rounded-full text-lg text-white">Add</button>
         </form>
       </div>
       
       <h2 class="text-start mb-2">List Todo : </h2>
-      <ul class="todo-items w-52">
-        <!-- <li class="flex items-center justify-between px-8 py-4 border-2 border-teal-300 rounded-lg mb-2">
-          <h1>Asdos std</h1>
-          <button type="submit" class="block">
-            <img class="h-5" src="./assets/loader2.svg" />
-          </button>
+      <ul class="todo-items md:w-96 w-72">
+        <!-- <li class="px-4 flex items-center justify-between py-4 border-2 border-teal-300 rounded-lg mb-2">
+          <div class="left flex">
+            <i class="checked cursor-pointer bi bi-circle mr-4"></i>
+            <h1 class="">Asdos std</h1>
+          </div>
+          <div class="right flex">
+            <button type="submit">
+              <i class="hover:text-slate-700 bi bi-pencil-square mr-2 text-slate-500"></i>
+            </button>
+            <button type="submit" class="block">
+              <i class="hover:text-slate-700 bi bi-trash3 text-slate-500"></i>
+            </button>
+          </div>
         </li> -->
       </ul>
     </div>
