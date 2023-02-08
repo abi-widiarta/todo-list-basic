@@ -18,4 +18,5 @@
 Tips : Be careful when writing script in package.json to convert tailwind input.css to output.css
  
 # I think that's all for now
-     
+
+Link Demo : https://abi-widiarta.github.io/todo-list-basic/
